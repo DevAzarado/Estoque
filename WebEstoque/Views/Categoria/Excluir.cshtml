@@ -1,0 +1,20 @@
+@model Categoria
+@{
+    ViewBag.Subtitulo = "Exclusão de Categoria";
+}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <h1 class="h2">@ViewBag.Subtitulo</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        @*<a asp-action="Cadastrar" class="btn btn-sm btn-outline-secondary">Adicionar Produto</a>*@
+    </div>
+</div>
+<h4>Deseja realmente excluir a categoria <span class="text-danger">@Model.Nome?</span></h4>
+
+<form asp-action="Excluir" class="w-25">
+    <input type="hidden" asp-for="@Model.IdCategoria">
+    <div class="mt-3">
+        <a asp-action="Index" class="btn btn-success">Não</a>
+        <button class="btn btn-danger" type="submit">Sim</button>
+    </div>
+</form>
